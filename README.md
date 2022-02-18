@@ -1,2 +1,2 @@
-# App React avec authentification Firebase
+### App React avec authentification Firebase
 
