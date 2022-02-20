@@ -9,8 +9,6 @@ import {auth} from '../firebase-config';
 
 export const UserContext = createContext();
 
-
-
 export function UserContextProvider(props) {
      
      const signUp = (email, pwd) => createUserWithEmailAndPassword(auth, email, pwd)
@@ -20,12 +18,12 @@ export function UserContextProvider(props) {
      const [loadingData, setLoadingData] = useState(true);
 
      useEffect(() => {
-     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-          setCurrentUser(currentUser)
+     const userStatus = onAuthStateChanged(auth, (connectedUser) => {
+          setCurrentUser(connectedUser)
           setLoadingData(false)
      })
 
-     return unsubscribe;
+     return userStatus;
 
      }, [])
      
@@ -62,7 +60,7 @@ export function UserContextProvider(props) {
 
      return (
           <UserContext.Provider value={{
-               modalState, toggleModals, signUp, currentUser, signIn
+               modalState, toggleModals, signUp, currentUser, signIn,
           }}>
                {!loadingData && props.children}
           </UserContext.Provider>

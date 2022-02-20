@@ -5,7 +5,7 @@ import { UserContext } from '../context/userContext'
 
 export default function SignUp() {
 
-     const { toggleModals, modalState, signUp } = useContext(UserContext);
+     const { toggleModals, modalState, signUp, } = useContext(UserContext);
      const navigate = useNavigate()
      const [validation, setValidation] = useState("");
 
@@ -28,7 +28,7 @@ export default function SignUp() {
                setValidation("difference between passwords")
                return;
           }
-
+          
           try {
                const cred = await signUp(
                     inputs.current[0].value,
@@ -36,7 +36,6 @@ export default function SignUp() {
                )
                formRef.current.reset();
                setValidation('')
-               // console.log(cred);
                toggleModals('close')
                navigate('/private/private-home')
           } catch (err) {
@@ -72,7 +71,7 @@ export default function SignUp() {
                                                   Sign-Up
                                              </h5>
                                              <button className='btn-close'
-                                                  onClick={closeModal}
+                                                  onClick={() => closeModal()}
                                              >
                                              </button>
                                         </div>

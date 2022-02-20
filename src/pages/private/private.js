@@ -6,11 +6,12 @@ import {Outlet, useLocation, Navigate} from 'react-router-dom'
 export default function Private() {
 
 const {currentUser} = useContext(UserContext)
-console.log("🤖 | Private | currentUser", currentUser)
+console.log(`⭐ | currentUser`, currentUser)
 
-if (!currentUser) {
-     return <Navigate to='/'/>
-}
+
+// if (!currentUser) {
+//      return <Navigate to='/'/>
+// }
 
 
   return (
