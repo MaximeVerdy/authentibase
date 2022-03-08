@@ -1,3 +1,3 @@
-### App React-Boostrap avec authentification Firebase
+### App React-Bootstrap avec authentification Firebase
 
 ![sreenshot](screenshot.gif)
