@@ -25,7 +25,7 @@ export default function NavBar() {
      return (
           <nav className='navbar navbar-light bg-light px-4' >
                <Link to='/' className='navbar-brand'>
-                    AuthJS
+                    authentiBase
                </Link>
 
                <div>
